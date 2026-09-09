@@ -1,0 +1,53 @@
+
+================================================================================
+LOGISTIC REGRESSION MODEL EVALUATION REPORT (SECOND DERIVATIVE)
+================================================================================
+Date: 2026-01-09 19:00:47
+Data: IR Spectral Data (Second Derivative via Savitzky-Golay)
+Preprocessing: Savitzky-Golay filter (window=15, polyorder=3, deriv=2)
+Training samples: 630
+Test samples: 158
+Features: 7469 (wavenumber points)
+
+--------------------------------------------------------------------------------
+1. PLASTIC TYPE CLASSIFICATION (Multi-class)
+--------------------------------------------------------------------------------
+Classes: ['PP', 'LDPE', 'LLDPE', 'HDPE']
+Test Accuracy: 0.9747
+Mean CV Accuracy: 0.9222 (+/- 0.0442)
+
+              precision    recall  f1-score   support
+
+          PP       1.00      1.00      1.00        34
+        LDPE       0.95      1.00      0.97        38
+       LLDPE       1.00      0.89      0.94        38
+        HDPE       0.96      1.00      0.98        48
+
+    accuracy                           0.97       158
+   macro avg       0.98      0.97      0.97       158
+weighted avg       0.98      0.97      0.97       158
+
+
+--------------------------------------------------------------------------------
+2. CONTAMINANT DETECTION (Multi-label)
+--------------------------------------------------------------------------------
+Contaminants: ['BSA', 'Oil', 'Starch', 'CMC', 'Guar', 'Casein']
+Hamming Loss: 0.0021
+Exact Match Ratio: 0.9873
+
+Per-contaminant Performance:
+  BSA: Accuracy=1.0000, F1-Score=1.0000
+  Oil: Accuracy=1.0000, F1-Score=1.0000
+  Starch: Accuracy=1.0000, F1-Score=1.0000
+  CMC: Accuracy=0.9873, F1-Score=0.9848
+  Guar: Accuracy=1.0000, F1-Score=1.0000
+  Casein: Accuracy=1.0000, F1-Score=1.0000
+
+--------------------------------------------------------------------------------
+3. COMBINED MODEL
+--------------------------------------------------------------------------------
+Plastic Type Accuracy: 0.9747
+Contaminant Hamming Loss: 0.0042
+Overall Exact Match Ratio: 0.9494
+
+================================================================================

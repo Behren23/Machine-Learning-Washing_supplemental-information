@@ -1,0 +1,52 @@
+
+================================================================================
+CNN MODEL EVALUATION REPORT
+================================================================================
+Date: 2026-01-06 21:06:29
+Data: IR Spectral Data
+Training samples: 472
+Validation samples: 158
+Test samples: 158
+Features: 7469 (wavenumber points)
+
+--------------------------------------------------------------------------------
+1. PLASTIC TYPE CLASSIFICATION (Multi-class)
+--------------------------------------------------------------------------------
+Classes: ['PP', 'LDPE', 'LLDPE', 'HDPE']
+Test Accuracy: 0.2278
+
+              precision    recall  f1-score   support
+
+          PP       0.23      1.00      0.37        34
+        LDPE       0.29      0.05      0.09        38
+       LLDPE       0.00      0.00      0.00        38
+        HDPE       0.00      0.00      0.00        48
+
+    accuracy                           0.23       158
+   macro avg       0.13      0.26      0.11       158
+weighted avg       0.12      0.23      0.10       158
+
+
+--------------------------------------------------------------------------------
+2. CONTAMINANT DETECTION (Multi-label)
+--------------------------------------------------------------------------------
+Contaminants: ['BSA', 'Oil', 'Starch', 'CMC', 'Guar', 'Casein']
+Hamming Loss: 0.2679
+Exact Match Ratio: 0.1582
+
+Per-contaminant Performance:
+  BSA: Accuracy=0.7532, F1-Score=0.7692
+  Oil: Accuracy=0.6456, F1-Score=0.6216
+  Starch: Accuracy=0.6709, F1-Score=0.6486
+  CMC: Accuracy=0.7278, F1-Score=0.6055
+  Guar: Accuracy=0.6456, F1-Score=0.6364
+  Casein: Accuracy=0.9494, F1-Score=0.0000
+
+--------------------------------------------------------------------------------
+3. COMBINED MODEL
+--------------------------------------------------------------------------------
+Plastic Type Accuracy: 0.2848
+Contaminant Hamming Loss: 0.3850
+Overall Exact Match Ratio: 0.0127
+
+================================================================================

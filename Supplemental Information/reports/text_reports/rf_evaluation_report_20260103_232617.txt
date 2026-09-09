@@ -1,0 +1,59 @@
+
+================================================================================
+RANDOM FOREST MODEL EVALUATION REPORT
+================================================================================
+Date: 2026-01-03 23:26:19
+Data: IR Spectral Data
+Training samples: 630
+Test samples: 158
+Features: 7469 (wavenumber points)
+
+Model Parameters:
+  - n_estimators: 100
+  - max_depth: None (unlimited)
+  - max_features: sqrt
+  - bootstrap: True
+
+--------------------------------------------------------------------------------
+1. PLASTIC TYPE CLASSIFICATION (Multi-class)
+--------------------------------------------------------------------------------
+Classes: ['PP', 'LDPE', 'LLDPE', 'HDPE']
+Test Accuracy: 0.8987
+OOB Score: 0.9175
+Mean CV Accuracy: 0.8444 (+/- 0.0607)
+
+              precision    recall  f1-score   support
+
+          PP       1.00      1.00      1.00        34
+        LDPE       0.75      0.95      0.84        38
+       LLDPE       0.93      0.74      0.82        38
+        HDPE       0.96      0.92      0.94        48
+
+    accuracy                           0.90       158
+   macro avg       0.91      0.90      0.90       158
+weighted avg       0.91      0.90      0.90       158
+
+
+--------------------------------------------------------------------------------
+2. CONTAMINANT DETECTION (Multi-label)
+--------------------------------------------------------------------------------
+Contaminants: ['BSA', 'Oil', 'Starch', 'CMC', 'Guar', 'Casein']
+Hamming Loss: 0.0401
+Exact Match Ratio: 0.8481
+
+Per-contaminant Performance:
+  BSA: Accuracy=0.9873, F1-Score=0.9873
+  Oil: Accuracy=1.0000, F1-Score=1.0000
+  Starch: Accuracy=0.9241, F1-Score=0.9143
+  CMC: Accuracy=0.9367, F1-Score=0.9242
+  Guar: Accuracy=0.9241, F1-Score=0.9167
+  Casein: Accuracy=0.9873, F1-Score=0.8889
+
+--------------------------------------------------------------------------------
+3. COMBINED MODEL
+--------------------------------------------------------------------------------
+Plastic Type Accuracy: 0.8987
+Contaminant Hamming Loss: 0.0401
+Overall Exact Match Ratio: 0.7975
+
+================================================================================

@@ -1,0 +1,52 @@
+
+================================================================================
+LOGISTIC REGRESSION MODEL EVALUATION REPORT
+================================================================================
+Date: 2026-01-11 17:16:57
+Data: IR Spectral Data
+Training samples: 630
+Test samples: 158
+Features: 7469 (wavenumber points)
+
+--------------------------------------------------------------------------------
+1. PLASTIC TYPE CLASSIFICATION (Multi-class)
+--------------------------------------------------------------------------------
+Classes: ['PP', 'LDPE', 'LLDPE', 'HDPE']
+Test Accuracy: 0.9620
+Mean CV Accuracy: 0.9302 (+/- 0.0273)
+
+              precision    recall  f1-score   support
+
+          PP       1.00      1.00      1.00        34
+        LDPE       1.00      0.95      0.97        38
+       LLDPE       0.90      0.95      0.92        38
+        HDPE       0.96      0.96      0.96        48
+
+    accuracy                           0.96       158
+   macro avg       0.96      0.96      0.96       158
+weighted avg       0.96      0.96      0.96       158
+
+
+--------------------------------------------------------------------------------
+2. CONTAMINANT DETECTION (Multi-label)
+--------------------------------------------------------------------------------
+Contaminants: ['BSA', 'Oil', 'Starch', 'CMC', 'Guar', 'Casein']
+Hamming Loss: 0.0158
+Exact Match Ratio: 0.9241
+
+Per-contaminant Performance:
+  BSA: Accuracy=1.0000, F1-Score=1.0000
+  Oil: Accuracy=0.9937, F1-Score=0.9928
+  Starch: Accuracy=0.9747, F1-Score=0.9722
+  CMC: Accuracy=0.9494, F1-Score=0.9420
+  Guar: Accuracy=0.9873, F1-Score=0.9859
+  Casein: Accuracy=1.0000, F1-Score=1.0000
+
+--------------------------------------------------------------------------------
+3. COMBINED MODEL
+--------------------------------------------------------------------------------
+Plastic Type Accuracy: 0.9620
+Contaminant Hamming Loss: 0.0179
+Overall Exact Match Ratio: 0.8861
+
+================================================================================
